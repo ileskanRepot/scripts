@@ -13,4 +13,4 @@ Configure monitors with xrandr
 
 # makeHtmlWebsiteFile.sh
 Make simple html directory with index.html and outfit.css
-`makeHtmlWebsiteFile.sh \<name of file\>`
+`makeHtmlWebsiteFile.sh <name of file>`
