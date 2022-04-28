@@ -21,3 +21,15 @@ Pipe clipboard content to `qalc` calculator, then pipe it back to clipboard. Wit
 # getYtVideoTitle.sh
 Get youtube video title and uploader from link. And notify-send them
 `getYtVideoTitle.sh [Video URL]`
+
+# music.sh
+Starts new `tmux` session with name `music` and starts playing music from directory `~/music`
+`music.sh`
+
+# typeGnuCopypasta.sh
+Copy gnu copypasta to clipboard and paste it with `xdotool`
+`typeGnuCopypasta.sh`
+
+# toOpus.sh
+Convert `.mp3` songs to `.opus`
+`toOpus.sh`
