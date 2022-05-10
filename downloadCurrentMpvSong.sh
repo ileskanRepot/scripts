@@ -14,5 +14,3 @@ else
 	echo "$SONGREPLACED" | tr -d '\\'
 	ffmpeg -i "$SONGREPLACED" -f opus -ab 320000 -vn ~/music/"$SONGNAME.opus" && notify-send "Finish" "Downloaded $NAME" || notify-send "Error" "Error downloading $NAME"
 fi
-
-
