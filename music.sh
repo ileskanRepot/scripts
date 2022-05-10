@@ -1,3 +1,5 @@
+#!/bin/bash
+SOURCE="~/music"
 if ! [[ -z $TMUX ]];
 then
 	echo -e "\033[30m\033[101mPlease Do Not Use Tmux While Launching\033[0m"
@@ -9,5 +11,12 @@ then
 		tmux kill-session
 	fi
 	exit
+else
+	if [ "$(echo $1 | head -c4)" == "http" ];
+	then
+		SOURCE="\"$1\""
+	fi
 fi
-tmux new -s music 'mpv ~/music --no-video --shuffle' 2>/dev/null || tmux a -c music
+echo -en "\033]0;st: Music\a"
+echo $SOURCE
+tmux new -s music "mpv --input-ipc-server=/tmp/mpvsocket $SOURCE --no-video --shuffle" 2>/dev/null || tmux a -t music
