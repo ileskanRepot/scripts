@@ -18,6 +18,15 @@ else
 	TITLE=$(echo $SONG | awk -F/ '{print $NF}' | sed 's/.webm//g')
 fi
 
-notify-send "Play video:" "$TITLE"
+TIME_POS=$(echo '{ "command": ["get_property", "time-pos"] }' | socat - /tmp/mpvsocket | jq ".data" | cut -d. -f1)
+TIME_TOTAL=$(($(echo '{ "command": ["get_property", "time-remaining"] }' | socat - /tmp/mpvsocket | jq ".data" | cut -d. -f1) + $TIME_POS))
+
+TIME_POS=$(date -d@$TIME_POS -u +%M:%S)
+TIME_TOTAL=$(date -d@$TIME_TOTAL -u +%M:%S)
+
+echo $TIME_POS
+echo $TIME_REMAINING
+
+notify-send "Play video: $TITLE" "$TIME_POS/$TIME_TOTAL"
 
 exit
