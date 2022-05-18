@@ -1,12 +1,13 @@
 #!/bin/bash
 SONG=$(echo '{ "command": ["get_property", "path"] }' | socat - /tmp/mpvsocket | jq -r ".data" | sed 's/mkv/webm/g')
+[ ! -z $(echo $SONG | grep list) ] && SONG=$(echo $SONG | cut -d\& -f1)
 echo $SONG
 NAME=$(echo $SONG | grep -o '[^/]*$')
 notify-send "Start" "Downloading $NAME"
 
 if [ "$(echo $SONG | head -c4)" == "http" ];
 then
-	yt-dlp -x --audio-format mp3 "$SONG" && notify-send "Finish" "Downloaded $NAME" || notify-send "Error" "Error downloading $NAME"
+	yt-dlp -x --audio-format opus "$SONG" && notify-send "Finish" "Downloaded $NAME" || notify-send "Error" "Error downloading $NAME"
 else
 	SONGNAME=$(echo $SONG | awk -F/ '{print $NF}' | sed 's/.webm//g')
 	echo "'$SONGNAME'"
