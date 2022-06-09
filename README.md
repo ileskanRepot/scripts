@@ -42,3 +42,7 @@ Convert `.mp3` songs to `.opus`\
 Notify-send currently playing song\
 mpv must launch with `--input-ipc-server=/tmp/mpvsocket` flag\
 `displayPlayingMpv.sh`
+
+## runCFromClipboard.sh
+Paste clipboard to tmp file. Compile it, run it and delete files.
+`runCFromClipboard.sh`
