@@ -44,5 +44,5 @@ mpv must launch with `--input-ipc-server=/tmp/mpvsocket` flag\
 `displayPlayingMpv.sh`
 
 ## runCFromClipboard.sh
-Paste clipboard to tmp file. Compile it, run it and delete files. (Works only under X enviroment)
+Paste clipboard to tmp file. Compile it, run it and delete files. (Works only under X enviroment)\
 `runCFromClipboard.sh`
