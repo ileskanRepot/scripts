@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 [ -z "$1" ] && echo -e "Usage:\ngetYtVideoTitle.sh [Video URL]" && exit
 
 URL=$1

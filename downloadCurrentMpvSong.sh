@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SONG=$(echo '{ "command": ["get_property", "path"] }' | socat - /tmp/mpvsocket | jq -r ".data" | sed 's/mkv/webm/g')
 [ ! -z $(echo $SONG | grep list) ] && SONG=$(echo $SONG | cut -d\& -f1)
 echo $SONG

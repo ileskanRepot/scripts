@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 row_1=$(echo {24..33})
 row_2=$(echo {38..46})

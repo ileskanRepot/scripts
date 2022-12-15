@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 SOURCE="~/music"
 SHUFFLE="--shuffle"
 if ! [[ -z $TMUX ]];

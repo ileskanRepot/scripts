@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 dmenuTextBgColor=$1
 dmenuBgColor=$2
 
