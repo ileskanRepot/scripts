@@ -11,11 +11,16 @@ def printRemap():
 	print("\t\t\t\"before\":[\"d\",\"d\"],")
 	print("\t\t\t\"after\":[\"g\",\"g\"]")
 	print("\t\t},")
+
 	print("\t\t{")
 	print("\t\t\t\"before\":[\"s\",\"s\"],")
 	print("\t\t\t\"after\":[\"d\",\"d\"]")
 	print("\t\t},")
 
+	print("\t\t{")
+	print("\t\t\t\"before\":[\"y\",\"y\"],")
+	print("\t\t\t\"after\":[\"o\"]")
+	print("\t\t},")
 
 print("\t\"vim.normalModeKeyBindingsNonRecursive\": [")
 printRemap()
